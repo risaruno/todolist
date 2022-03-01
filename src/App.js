@@ -13,10 +13,13 @@ function App() {
     getLocal();
   }, []);
 
-  useEffect(() => {
-    saveLocal();
-    filterHandler();
-  }, [todos, status]);
+  useEffect(
+    () => {
+      saveLocal();
+      filterHandler();
+    }, // eslint-disable-next-line
+    [todos, status]
+  );
 
   const filterHandler = () => {
     switch (status) {
